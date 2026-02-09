@@ -27,8 +27,6 @@ _LOGGER = logging.getLogger(__name__)
 
 # https://yandex.ru/dev/dialogs/smart-home/doc/concepts/device-type-sensor.html
 INCLUDE_TYPES = (
-    "devices.types.remote_car",
-    "devices.types.remote.ir",
     "devices.types.sensor",
     "devices.types.sensor.button",
     "devices.types.sensor.climate",
@@ -45,8 +43,11 @@ INCLUDE_TYPES = (
     "devices.types.smart_meter.gas",
     "devices.types.smart_meter.heat",
     "devices.types.smart_meter.hot_water",
-    "devices.types.smart_speaker.yandex.station.plum",
     "devices.types.socket",
+    "devices.types.remote_car",  # fuel_level, petrol_mileage
+    "devices.types.remote.ir",  # temperature, humidity
+    "devices.types.smart_speaker.yandex.station.pickle",  # co2_level, temp., hum.
+    "devices.types.smart_speaker.yandex.station.plum",  # battery
 )
 INCLUDE_PROPERTIES = ("devices.properties.float", "devices.properties.event")
 
