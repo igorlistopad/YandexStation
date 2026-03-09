@@ -397,6 +397,10 @@ class YandexStationBase(MediaBrowser, RestoreEntity):
             return
 
         config, version = await self.quasar.get_device_config(self.device)
+
+        if config.get("dndMode") is None:
+            raise HomeAssistantError("Режим 'не беспокоить' не поддерживается этим устройством")
+
         config["dndMode"]["enabled"] = value
         await self.quasar.set_device_config(self.device, config, version)
 
